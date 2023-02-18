@@ -1,0 +1,17 @@
+body {
+    background-color: black;
+    margin: 0 auto;
+}
+
+.relogio {
+    position: absolute;
+    letter-spacing: 5px;
+    top: calc(50% - 30px);
+    line-height: 60px;
+    font-size: 60px;
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    color: #00FF00;
+    width: 100%;
+
+}
