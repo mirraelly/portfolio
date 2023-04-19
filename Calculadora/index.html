@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Super Calculadora</title>
+  <link rel="stylesheet" href="meu-estilo.css">
+</head>
+
+<body>
+
+  <div class="fundoA">
+
+
+    <h1>Super Calculadora</h1>
+    <label>Primeiro número (A) <input type="number" id="input-numA" value=""> </label>
+    <label> Segundo número (B) <input type="number" id="input-numB" value=""> </label>
+    <button id="calcular">Calcular</button>
+
+    <div class="fundoB">
+      <table>
+        <tr>
+          <td>
+            <p id="soma">Soma
+            <p id="resultado-soma"> - </p>
+          </td>
+          <td>
+            <p id="subtracaoAMenosB">Subtração A - B
+            <p id="resultado-subtracaoAMenosB"> - </p>
+          </td>
+          <td>
+            <p id="subtracaoBMenosA">Subtração B - A
+            <p id="resultado-subtracaoBMenosA"> - </p>
+          </td>
+
+        </tr>
+        <tr>
+          <td>
+            <p id="multiplicacao">Multiplicação
+            <p id="resultado-multiplicacao"> - </p>
+          </td>
+          <td>
+            <p id="divisaoAPorB">Divisão A / B
+            <p id="resultado-divisaoAPorB"> - </p>
+          </td>
+          <td>
+            <p id="divisaoBPorA">Divisão B / A
+            <p id="resultado-divisaoBPorA"> - </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p id="potenciaANaBaseB">Potência de A na base B
+            <p id="resultado-potenciaANaBaseB"> - </p>
+          </td>
+          <td>
+            <p id="potenciaBNaBaseA">Potência de B na base A
+            <p id="resultado-potenciaBNaBaseA"> - </p>
+          </td>
+          <td>
+            <p id="raizQuadradaDeA">Raiz quadrada de A
+            <p id="resultado-raizQuadradaDeA"> - </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p id="raizQuadradaDeB">Raiz quadrada de B
+            <p id="resultado-raizQuadradaDeB"> - </p>
+          </td>
+          <td>
+            <p id="fatorialDeA">Fatorial de A
+            <p id="resultado-fatorialDeA"> - </p>
+          </td>
+          <td>
+            <p id="fatorialDeB">Fatorial de B
+            <p id="resultado-fatorialDeB"> - </p>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <p id="porcentagemADeB">Porcentagem de A em relação a B
+            <p id="resultado-porcentagemADeB"> - </p>
+          </td>
+          <td>
+            <p id="porcentagemBDeA">Porcentagem de B em relação a A
+            <p id="resultado-porcentagemBDeA"> - </p>
+          </td>
+          <td>
+            <p id="media">Média
+            <p id="resultado-media"> - </p>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <script src="calculadora.js"></script>
+</body>
+
+</html>

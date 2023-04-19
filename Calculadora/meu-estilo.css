@@ -1,0 +1,52 @@
+body,
+html {
+  font-size: 100%;
+  
+}
+
+.fundoA {
+  background-color: #1d1d1d;
+  color: greenyellow;
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 10px;
+  width: 80%;
+  margin: auto;
+  padding: 8px;
+  text-align: center;
+}
+
+button {
+  background-color: greenyellow;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.fundoB {
+  background-color: #3c3b3c;
+  color: #6978c2;
+  border-radius: 10px;
+  margin-top: 12px;
+  text-align: left;
+  
+
+}
+.fundoB p {
+  padding-left: 10px;
+}
+table {
+  border: 1px, black center; 
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table td {
+  width: 33%;
+
+}
+
+table tr, table td {
+  
+  border: solid 1px black;
+}
+
+
