@@ -1,0 +1,136 @@
+<meta charset="UTF-8">
+
+<canvas width="800" height="600"></canvas>
+
+<style>
+    canvas {
+        cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='12' height='12'%3E%3Cpath d='M6.93912 14.0327C6.7072 14.6562 6.51032 15.233 6.33421 15.8154C7.29345 15.1188 8.43544 14.6766 9.75193 14.512C12.2652 14.1979 14.4976 12.5384 15.6279 10.4535L14.1721 8.99878L15.5848 7.58407C15.9185 7.24993 16.2521 6.91603 16.5858 6.58237C17.0151 6.15301 17.5 5.35838 18.0129 4.21479C12.4197 5.08172 8.99484 8.50636 6.93912 14.0327ZM17 8.99728L18 9.99658C17 12.9966 14 15.9966 10 16.4966C7.33146 16.8301 5.66421 18.6635 4.99824 21.9966H3C4 15.9966 6 1.99658 21 1.99658C20.0009 4.99392 19.0018 6.99303 18.0027 7.99391C17.6662 8.33038 17.3331 8.66372 17 8.99728Z'%3E%3C/path%3E%3C/svg%3E") 0 0, auto;
+        pointer-events: auto;
+        margin: auto;
+        display: block;
+    }
+</style>
+
+<script>
+
+    function desenhaQuadrado(x, y, tamanho, cor) {
+
+        pincel.fillStyle = cor;
+        pincel.strokeStyle = 'black';
+        pincel.fillRect(x, y, tamanho, tamanho)
+        pincel.strokeRect(x, y + 1, tamanho - 1, tamanho);
+        pincel.fill();
+    }
+
+    function desenhaCirculo(x, y, raio, cor) {
+
+        pincel.fillStyle = cor;
+        pincel.beginPath();
+        pincel.arc(x, y, raio, 0, 2 * 3.14);
+        pincel.fill();
+
+    }
+
+    function desenhaPaletaDeCores() {
+
+        desenhaQuadrado(xQuadrados, yAzul, tamanhoQuadrados, 'blue');
+        desenhaQuadrado(xQuadrados, yAzulEscuro, tamanhoQuadrados, 'darkblue');
+        desenhaQuadrado(xQuadrados, yVerde, tamanhoQuadrados, 'green');
+        desenhaQuadrado(xQuadrados, yAmarelo, tamanhoQuadrados, 'yellow');
+        desenhaQuadrado(xQuadrados, yLaranja, tamanhoQuadrados, 'orange');
+        desenhaQuadrado(xQuadrados, yVermelho, tamanhoQuadrados, 'red');
+        desenhaQuadrado(xQuadrados, yRoxo, tamanhoQuadrados, 'purple');
+        desenhaQuadrado(xQuadrados, yBranco, tamanhoQuadrados, 'white');
+        desenhaQuadrado(xQuadrados, yRosa, tamanhoQuadrados, 'pink');
+        desenhaQuadrado(xQuadrados, yVerdeLimao, tamanhoQuadrados, 'greenyellow');
+        desenhaQuadrado(xQuadrados, yMarrom, tamanhoQuadrados, 'brown');
+        desenhaQuadrado(xQuadrados, yPreto, tamanhoQuadrados, 'black');
+
+    }
+
+    function lidaComMovimentoDoMouse(evento) {
+
+        const x = evento.pageX - tela.offsetLeft;
+        const y = evento.pageY - tela.offsetTop;
+
+        if (x < 730) {
+            if (desenha) {
+                desenhaCirculo(x, y, 5, corAtual);
+            }
+        }
+    }
+
+    function habilitaDesenhar(evento) {
+
+        desenha = true;
+
+        const x = evento.pageX - tela.offsetLeft;
+        const y = evento.pageY - tela.offsetTop;
+
+
+        if ((x > 750) && (y < 50)) {
+            corAtual = 'blue';
+        } else if (x > 750 && y >= 50 && y < 100) {
+            corAtual = 'darkblue';
+        } else if (x > 750 && y >= 100 && y < 150) {
+            corAtual = 'green';
+        } else if (x > 750 && y >= 150 && y < 200) {
+            corAtual = 'yellow';
+        } else if (x > 750 && y >= 200 && y < 250) {
+            corAtual = 'orange';
+        } else if (x > 750 && y >= 250 && y < 300) {
+            corAtual = 'red';
+        } else if (x > 750 && y >= 300 && y < 350) {
+            corAtual = 'purple';
+        } else if (x > 750 && y >= 350 && y < 400) {
+            corAtual = 'white';
+        } else if (x > 750 && y >= 400 && y < 450) {
+            corAtual = 'pink';
+        } else if (x > 750 && y >= 450 && y < 500) {
+            corAtual = 'greenyellow';
+        } else if (x > 750 && y >= 500 && y < 550) {
+            corAtual = 'browm';
+        } else if (x > 750 && y >= 550) {
+            corAtual = 'black';
+        }
+    }
+
+    function desabilitaDesenhar() {
+        desenha = false;
+    }
+
+    const tela = document.querySelector('canvas');
+    const pena = document.querySelector('#pena');
+    const pincel = tela.getContext('2d');
+    pincel.fillStyle = 'lightgray';
+    pincel.fillRect(0, 0, 732, 600);
+    pincel.strokeStyle = 'black';
+    pincel.strokeRect(1, 1, 731, 598);
+
+
+    let desenha = false;
+    let corAtual;
+    const yAzul = 0;
+    const yAzulEscuro = 50;
+    const yVerde = 100;
+    const yAmarelo = 150;
+    const yLaranja = 200;
+    const yVermelho = 250;
+    const yRoxo = 300;
+    const yBranco = 350;
+    const yRosa = 400;
+    const yVerdeLimao = 450;
+    const yMarrom = 500;
+    const yPreto = 550;
+    const xQuadrados = 750;
+    const tamanhoQuadrados = 50;
+
+    desenhaPaletaDeCores(); // mostra os quadrados de seleção de cores
+
+    tela.onmousemove = lidaComMovimentoDoMouse;
+
+    tela.onmousedown = habilitaDesenhar;
+
+    tela.onmouseup = desabilitaDesenhar;
+
+</script>
